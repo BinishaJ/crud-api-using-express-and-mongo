@@ -1,0 +1,26 @@
+{
+  "name": "crud-api-using-express-and-mongo",
+  "version": "1.0.0",
+  "description": "CRUD API using ExpressJS and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "keywords": [
+    "crud",
+    "api",
+    "express",
+    "mongo",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.1",
+    "nodemon": "^2.0.20"
+  }
+}
