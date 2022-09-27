@@ -66,14 +66,15 @@ router.delete("/:id", async (req, res) => {
     return res.status(400).json({ message: "Invalid ID" });
 
   try {
+    //delete user
     const deleteUser = await User.findByIdAndDelete(req.params.id);
+
     //no user with the given ID
     if (!deleteUser) {
       return res
         .status(404)
         .json({ message: `No user matches ID ${req.params.id}.` });
     }
-    //delete user
     res.json(deleteUser);
   } catch (err) {
     res.json({ messge: err });
@@ -100,7 +101,8 @@ router.patch("/:id", async (req, res) => {
       { _id: req.params.id },
       { $set: req.body }
     );
-    res.json(updateUser);
+    const updated = await User.findById(req.params.id);
+    res.json(updated);
   } catch (err) {
     res.json({ message: err });
   }
